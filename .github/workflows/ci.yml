@@ -1,0 +1,39 @@
+# .github/workflows/ci.yml
+name: CI - Jokes NPM module
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupère le code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Configure Node.js (version à ajuster)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      # 3. Installe les dépendances
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Compile TypeScript
+      - name: Build TypeScript
+        run: npm run build --if-present
+
+      # 5. Lint le code
+      - name: Run Linter
+        run: npm run lint --if-present
+
+      # 6. Exécute les tests
+      - name: Run Tests
+        run: npm test --if-present
