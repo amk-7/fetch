@@ -1,6 +1,6 @@
 {
   "name": "@amk-7/fetch",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A Node.js package that fetch random jokes using AI.",
   "main": "dist/index.js",
   "scripts": {
