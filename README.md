@@ -12,20 +12,6 @@ It provides a clean interface for generating fun and dynamic content, either fro
 - 📦 Written in **TypeScript** with type-safe options.
 - ⚡ Simple CLI integration.
 
-
-
----
-
-## Table des matières
-- [About](#-à-propos)
-- [Architecture](#-architecture)
-- [Installation](#-installation)
-- [Utilisation](#-utilisation)
-- [Exemples](#-exemples)
-- [Tests](#-tests)
-- [Contribution](#-contribution)
-- [Licence](#-licence)
-
 ---
 
 ## About
@@ -44,11 +30,7 @@ It provides a clean interface for generating fun and dynamic content, either fro
   - **Pino** (logging).  
   - **Jest** (testing).  
   - **Gemini / other AI providers** (AI-generated content).  
-
----
-
-## Architecture
-
+  
 ---
 
 ## Installation
@@ -60,9 +42,15 @@ It provides a clean interface for generating fun and dynamic content, either fro
 
 ### Installation sans docker
 ```bash
+
+# Installer depuis npm
+npm install -g fetch
+```
+
+```bash
 # Cloner le projet
-git clone https://github.com/username/nom-du-projet.git
-cd nom-du-projet
+git clone https://github.com/amk-7/fetch.git
+cd fetch
 
 # Installer les dépendances
 npm ci
@@ -77,23 +65,19 @@ npm run build
 
 ### CLI
 ```bash
-nom-du-projet commande --option
+fetch  --help
+
+// Générer une blage
+fetch joke
 ```
 
 ### En tant que librairie
 ```ts
-import { MaFonction } from "nom-du-projet";
+import { JokeAction } from "fetch";
 
-MaFonction("Hello World");
+const joke: Joke = await jokeAction.generate({ theme: options.theme }); 
+console.log(`Blague générée :\n${joke.toString()}`);
 ```
-
----
-
-## Exemples
-
-- **Exemple 1 :** Génération d’un meme
-- **Exemple 2 :** Appel API pour une blague
-- **Exemple 3 :** Intégration dans un projet web
 
 ---
 
@@ -104,19 +88,14 @@ Lancer la suite de tests :
 npm run test
 ```
 
-Avec couverture :  
-```bash
-npm run test:coverage
-```
-
 ---
 
 ## Roadmap
 
+- [ ] Générer un meme  
 - [ ] Ajouter une interface web  
 - [ ] Support multi-langue  
 - [ ] Ajouter un système de plugins  
-- [ ] Déployer sur npm / PyPI  
 
 ---
 
@@ -141,5 +120,5 @@ Voir [LICENSE](LICENSE) pour plus d’informations.
 
 ## Auteur
 
-- **Nom complet / Pseudo**  
-- [Portfolio](https://ton-portfolio.com) | [LinkedIn](https://linkedin.com/in/ton-profil) | [Twitter](https://twitter.com/tonhandle)
+- **KONDI Abdoul Malik (amk-7)**  
+- [Portfolio](https://kondi-code.vercel.app/) | [LinkedIn](https://www.linkedin.com/in/abdoul-malik-kondi-b51146210) | [whatsApp](https://wa.link/kzi7an)
