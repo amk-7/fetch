@@ -38,7 +38,7 @@ describe("JokeAction", () => {
 
     const joke = await jokeAction.generate({ theme: "dark" });
     expect(joke).toBeDefined();
-    expect(joke).toBeInstanceOf(String);
+    expect(joke).toBeInstanceOf(Joke);
   });
 
   it("doit retourner un joke de l'IA si connecté", async () => {

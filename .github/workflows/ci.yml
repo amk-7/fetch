@@ -1,4 +1,4 @@
-# .github/workflows/ci.yml
+# .github/workflows/ci.yml CI CD
 name: CI - Jokes NPM module
 on:
   push:
@@ -37,3 +37,4 @@ jobs:
       # 6. Exécute les tests
       - name: Run Tests
         run: npm test --if-present
+

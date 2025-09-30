@@ -68,7 +68,6 @@ export default class Meme {
                 "bottomText": "<bottomText si défini>",
                 "language": "<language si défini>",
                 "nsfw": <nsfw si défini>,
-                "customImageUrl": "<customImageUrl si défini>",
                 "characters": <characters si défini>
             }
         }`;
@@ -89,7 +88,6 @@ export default class Meme {
                 "bottomText": "<bottomText si défini>",
                 "language": "<language si défini>",
                 "nsfw": <nsfw si défini>,
-                "customImageUrl": "<customImageUrl si défini>",
                 "characters": <characters si défini>
             }
         }`;
