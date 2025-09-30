@@ -213,5 +213,33 @@
     "options": {
       "theme": "mock"
     }
+  },
+  {
+    "setup": "Setup mock",
+    "punchline": "Punchline mock",
+    "options": {
+      "theme": "mock"
+    }
+  },
+  {
+    "setup": "Qu'est-ce qu'un concombre qui s'ennuie ?",
+    "punchline": "Un concombre masqué !",
+    "options": {
+      "theme": null
+    }
+  },
+  {
+    "setup": "Setup mock",
+    "punchline": "Punchline mock",
+    "options": {
+      "theme": "mock"
+    }
+  },
+  {
+    "setup": "Setup mock",
+    "punchline": "Punchline mock",
+    "options": {
+      "theme": "mock"
+    }
   }
 ]

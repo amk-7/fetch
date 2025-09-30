@@ -36,7 +36,7 @@ export default class JokeAction implements Action<Joke, JokeOptions> {
         } return this.ai;
     }
 
-    async generate(options: JokeOptions | undefined): Promise<Joke> {
+    async generate(options?: JokeOptions): Promise<Joke> {
         try {
             const online = await checkConnection();
             if (!online) {
