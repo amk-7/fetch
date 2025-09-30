@@ -31,9 +31,9 @@ export default class Joke {
         };
     }
 
-    static getPrompt(options: JokeOptions): string {
+    static getPrompt(options: JokeOptions|undefined): string {
         let prompt = "Génère une blague courte et drôle";
-        if (options.theme) {
+        if (options?.theme) {
             prompt += ` sur le thème "${options.theme}"`;
         }
         prompt += `. Réponds uniquement en JSON valide avec la structure suivante : 
