@@ -1,13 +1,12 @@
 {
-  "name": "joke",
+  "name": "fetch",
   "version": "1.0.0",
-  "description": "A Node.js package that generates random jokes using the Gemini AI.",
+  "description": "A Node.js package that fetch random jokes using AI.",
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
     "test": "npm run test-joke",
     "test-joke": "npx jest src/core/jokes/tests/",
-    "test-meme": "npx jest src/core/jokes/tests/",
     "dev": "ts-node src/index.ts",
     "fetch": "node dist/core/cli.js"
   },
@@ -24,9 +23,10 @@
     "joke",
     "gemini",
     "ai",
-    "random"
+    "random",
+    "fetch"
   ],
-  "author": "Your Name",
+  "author": "KONDI Abdoul Malik",
   "license": "MIT",
   "dependencies": {
     "@google/genai": "^1.21.0",
