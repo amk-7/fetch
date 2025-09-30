@@ -11,6 +11,6 @@
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "memes"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

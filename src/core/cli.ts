@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import jokeCommand from './jokes/cli';
-import memeCommand from './memes/cli';
+import memeCommand from '../../memes/cli';
 
 const program = new Command();
 // Configure the CLI program
