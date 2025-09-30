@@ -1,6 +1,6 @@
 .env
 RoadMap.md
-dist
+publish.sh
 # Logs
 logs
 *.log
