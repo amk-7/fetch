@@ -178,5 +178,40 @@
     "options": {
       "theme": "mock"
     }
+  },
+  {
+    "setup": "Setup mock",
+    "punchline": "Punchline mock",
+    "options": {
+      "theme": "mock"
+    }
+  },
+  {
+    "setup": "Setup mock",
+    "punchline": "Punchline mock",
+    "options": {
+      "theme": "mock"
+    }
+  },
+  {
+    "setup": "Setup mock",
+    "punchline": "Punchline mock",
+    "options": {
+      "theme": "mock"
+    }
+  },
+  {
+    "setup": "Setup mock",
+    "punchline": "Punchline mock",
+    "options": {
+      "theme": "mock"
+    }
+  },
+  {
+    "setup": "Setup mock",
+    "punchline": "Punchline mock",
+    "options": {
+      "theme": "mock"
+    }
   }
 ]

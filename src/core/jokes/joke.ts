@@ -3,15 +3,17 @@ import { JokeOptions } from "./options";
 export default class Joke {
     private setup: string;
     private punchline: string;
-    private options: JokeOptions;
+    private options?: JokeOptions;
 
-    constructor(setup: string, punchline: string, options: JokeOptions) {
+    constructor(setup: string, punchline: string, options?: JokeOptions) {
         this.setup = setup;
         this.punchline = punchline;
-        this.options = options;
+        if (options) {
+            this.options = options;
+        }
     }
 
-    getOptions(): JokeOptions{
+    getOptions(): JokeOptions | undefined {
         return this.options;
     }
 
