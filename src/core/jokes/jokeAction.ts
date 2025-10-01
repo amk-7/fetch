@@ -14,9 +14,15 @@ export default class JokeAction implements Action<Joke, JokeOptions> {
     private static jokesGen = jokesGenerator(JokeAction.localJokesFilePath);
     private static instance: JokeAction | null = null;
 
-    static getAction() {
+    constructor(geminiAPIKey?: string) {
+        if (geminiAPIKey) {
+            this.ai = GeminiProvider.getProvider(geminiAPIKey);
+        }
+    }
+
+    static getAction(geminiAPIKey?: string): JokeAction {
         if (JokeAction.instance==null){
-            JokeAction.instance = new JokeAction();
+            JokeAction.instance = new JokeAction(geminiAPIKey);
         }
         return JokeAction.instance;
     }
@@ -30,20 +36,14 @@ export default class JokeAction implements Action<Joke, JokeOptions> {
         return yield_content.value as Joke;
     }
 
-    private getAI(): AIProvider {
-        if(!this.ai){
-            this.ai = GeminiProvider.getProvider();
-        } return this.ai;
-    }
-
     async generate(options?: JokeOptions): Promise<Joke> {
         try {
             const online = await checkConnection();
-            if (!online) {
+            if (!online || !this.ai) {
                 return getRandomJoke(JokeAction.localJokesFilePath);
             }
             const prompt: string = Joke.getPrompt(options);
-            const jokeData: string = await this.getAI().textToText(prompt); 
+            const jokeData: string = await this.ai.textToText(prompt); 
             const joke = Joke.fromJSON(JSON.parse(jokeData));
             saveJoke(JokeAction.localJokesFilePath, joke);
             return joke;

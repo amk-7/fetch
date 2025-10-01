@@ -3,7 +3,6 @@ import { removeJsonAnotaionOnString } from "../../utils/string.utils";
 import AIProvider from "./provider";
 import { GoogleGenAI } from "@google/genai";
 import mime from "mime";
-import config from "../../config";
 
 
 export default class GeminiProvider implements AIProvider {
@@ -11,15 +10,15 @@ export default class GeminiProvider implements AIProvider {
 
     private static instance: GeminiProvider | null = null;
 
-    constructor() {
+    constructor(geminiAPIKey: string) {
         this.gemini = new GoogleGenAI({
-            apiKey: config.GEMINI_API_KEY || "",
+            apiKey: geminiAPIKey,
         });
     }
 
-    static getProvider(): GeminiProvider {
+    static getProvider(geminiAPIKey: string): GeminiProvider {
         if (GeminiProvider.instance == null) {
-            GeminiProvider.instance = new GeminiProvider();
+            GeminiProvider.instance = new GeminiProvider(geminiAPIKey);
         }
         return GeminiProvider.instance;
     }

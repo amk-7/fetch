@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import jokeCommand from './jokes/cli';
 
 const program = new Command();
+
 // Configure the CLI program
 program
   .name('joke-js-cli')

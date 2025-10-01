@@ -15,6 +15,13 @@ Visit the [repository](https://github.com/amk-7/fetch.git) on github and fork it
 
 ### 5. Create a pull request and submit it.
 
+## Tests
+
+Lancer la suite de tests :  
+```bash
+npm run test
+```
+
 ### ps : This is the basic project structure
 
 ````	

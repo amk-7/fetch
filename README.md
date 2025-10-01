@@ -12,7 +12,7 @@ It provides a clean interface for generating fun and dynamic content, either fro
 - 📦 Written in **TypeScript** with type-safe options.
 - ⚡ Simple CLI integration.
 
----
+
 
 ## About
 
@@ -31,7 +31,6 @@ It provides a clean interface for generating fun and dynamic content, either fro
   - **Jest** (testing).  
   - **Gemini / other AI providers** (AI-generated content).  
   
----
 
 ## Installation
 
@@ -59,9 +58,16 @@ npm ci
 npm run build
 ```
 
----
 
 ## Utilisation
+
+### Configuration des providers AI
+Créer un fichier `.env` à la racine du projet et ajouter les variables d'environnements suivantes :  
+
+```env
+# Pour GEMINI
+GEMINI_API_KEY=your_gemini_api_key
+```
 
 ### CLI
 ```bash
@@ -73,22 +79,31 @@ fetch joke
 
 ### En tant que librairie
 ```ts
-import { JokeAction } from "fetch";
+import { JokeAction } from "@amk-7/fetch";
 
-const joke: Joke = await jokeAction.generate({ theme: options.theme }); 
-console.log(`Blague générée :\n${joke.toString()}`);
+async function main() {
+  const joke = JokeAction.getAction();
+  const result = await joke.generate()
+  console.log(result);
+}
+
+main();
+
+// Ou avec des options
+import { JokeAction } from "@amk-7/fetch";
+
+async function main() {
+  const joke = JokeAction.getAction();
+  const options = { theme: "One piece" };
+  const result = await joke.generate(options); 
+  console.log(result);
+}
+
+main();
+
 ```
 
----
 
-## Tests
-
-Lancer la suite de tests :  
-```bash
-npm run test
-```
-
----
 
 ## Roadmap
 
@@ -97,7 +112,6 @@ npm run test
 - [ ] Support multi-langue  
 - [ ] Ajouter un système de plugins  
 
----
 
 ## 🤝 Contribution
 
@@ -109,14 +123,12 @@ Les contributions sont les bienvenues 🎉
 
 Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
 
----
 
 ## Licence
 
 Distribué sous licence **MIT**.  
 Voir [LICENSE](LICENSE) pour plus d’informations.
 
----
 
 ## Auteur
 
