@@ -65,7 +65,7 @@ npm run build
 Créer un fichier `.env` à la racine du projet et ajouter les variables d'environnements suivantes :  
 
 ```env
-# Pour GEMINI
+# file : .env
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
