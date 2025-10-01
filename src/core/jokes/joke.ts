@@ -3,15 +3,17 @@ import { JokeOptions } from "./options";
 export default class Joke {
     private setup: string;
     private punchline: string;
-    private options: JokeOptions;
+    private options?: JokeOptions;
 
-    constructor(setup: string, punchline: string, options: JokeOptions) {
+    constructor(setup: string, punchline: string, options?: JokeOptions) {
         this.setup = setup;
         this.punchline = punchline;
-        this.options = options;
+        if (options) {
+            this.options = options;
+        }
     }
 
-    getOptions(): JokeOptions{
+    getOptions(): JokeOptions | undefined {
         return this.options;
     }
 
@@ -31,9 +33,9 @@ export default class Joke {
         };
     }
 
-    static getPrompt(options: JokeOptions): string {
+    static getPrompt(options: JokeOptions|undefined): string {
         let prompt = "Génère une blague courte et drôle";
-        if (options.theme) {
+        if (options?.theme) {
             prompt += ` sur le thème "${options.theme}"`;
         }
         prompt += `. Réponds uniquement en JSON valide avec la structure suivante : 

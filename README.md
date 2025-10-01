@@ -14,20 +14,6 @@ It provides a clean interface for generating fun and dynamic content, either fro
 
 
 
----
-
-## Table des matières
-- [About](#-à-propos)
-- [Architecture](#-architecture)
-- [Installation](#-installation)
-- [Utilisation](#-utilisation)
-- [Exemples](#-exemples)
-- [Tests](#-tests)
-- [Contribution](#-contribution)
-- [Licence](#-licence)
-
----
-
 ## About
 
 - **Goal:**  
@@ -44,12 +30,7 @@ It provides a clean interface for generating fun and dynamic content, either fro
   - **Pino** (logging).  
   - **Jest** (testing).  
   - **Gemini / other AI providers** (AI-generated content).  
-
----
-
-## Architecture
-
----
+  
 
 ## Installation
 
@@ -60,9 +41,15 @@ It provides a clean interface for generating fun and dynamic content, either fro
 
 ### Installation sans docker
 ```bash
+
+# Installer depuis npm
+npm install -g fetch
+```
+
+```bash
 # Cloner le projet
-git clone https://github.com/username/nom-du-projet.git
-cd nom-du-projet
+git clone https://github.com/amk-7/fetch.git
+cd fetch
 
 # Installer les dépendances
 npm ci
@@ -71,54 +58,60 @@ npm ci
 npm run build
 ```
 
----
 
 ## Utilisation
 
+### Configuration des providers AI
+Créer un fichier `.env` à la racine du projet et ajouter les variables d'environnements suivantes :  
+
+```env
+# file : .env
+GEMINI_API_KEY=your_gemini_api_key
+```
+
 ### CLI
 ```bash
-nom-du-projet commande --option
+fetch  --help
+
+// Générer une blage
+fetch joke
 ```
 
 ### En tant que librairie
 ```ts
-import { MaFonction } from "nom-du-projet";
+import { JokeAction } from "@amk-7/fetch";
 
-MaFonction("Hello World");
+async function main() {
+  const joke = JokeAction.getAction();
+  const result = await joke.generate()
+  console.log(result);
+}
+
+main();
+
+// Ou avec des options
+import { JokeAction } from "@amk-7/fetch";
+
+async function main() {
+  const joke = JokeAction.getAction();
+  const options = { theme: "One piece" };
+  const result = await joke.generate(options); 
+  console.log(result);
+}
+
+main();
+
 ```
 
----
 
-## Exemples
-
-- **Exemple 1 :** Génération d’un meme
-- **Exemple 2 :** Appel API pour une blague
-- **Exemple 3 :** Intégration dans un projet web
-
----
-
-## Tests
-
-Lancer la suite de tests :  
-```bash
-npm run test
-```
-
-Avec couverture :  
-```bash
-npm run test:coverage
-```
-
----
 
 ## Roadmap
 
+- [ ] Générer un meme  
 - [ ] Ajouter une interface web  
 - [ ] Support multi-langue  
 - [ ] Ajouter un système de plugins  
-- [ ] Déployer sur npm / PyPI  
 
----
 
 ## 🤝 Contribution
 
@@ -130,16 +123,14 @@ Les contributions sont les bienvenues 🎉
 
 Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
 
----
 
 ## Licence
 
 Distribué sous licence **MIT**.  
 Voir [LICENSE](LICENSE) pour plus d’informations.
 
----
 
 ## Auteur
 
-- **Nom complet / Pseudo**  
-- [Portfolio](https://ton-portfolio.com) | [LinkedIn](https://linkedin.com/in/ton-profil) | [Twitter](https://twitter.com/tonhandle)
+- **KONDI Abdoul Malik (amk-7)**  
+- [Portfolio](https://kondi-code.vercel.app/) | [LinkedIn](https://www.linkedin.com/in/abdoul-malik-kondi-b51146210) | [whatsApp](https://wa.link/kzi7an)

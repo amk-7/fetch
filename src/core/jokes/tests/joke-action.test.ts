@@ -32,6 +32,19 @@ describe("JokeAction", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
+  
+  it("doit retourner une instance singleton", () => {
+    const anotherInstance = JokeAction.getAction();
+    expect(jokeAction).toBe(anotherInstance);
+  });
+
+  it("Doit pouvoir genérer une blague sans options", async () => {
+    (checkConnection as jest.Mock).mockResolvedValue(true);
+
+    const joke = await jokeAction.generate();
+    expect(joke).toBeDefined();
+    expect(joke).toBeInstanceOf(Joke);
+  });
 
   it("doit retourner un joke local si pas de connexion", async () => {
     (checkConnection as jest.Mock).mockResolvedValue(false);
@@ -48,4 +61,7 @@ describe("JokeAction", () => {
     expect(joke.setup).toBe("Setup mock");
     expect(joke.punchline).toBe("Punchline mock");
   });
+
+
+
 });
