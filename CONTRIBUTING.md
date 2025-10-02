@@ -4,7 +4,7 @@
 
 Visit the [repository](https://github.com/amk-7/fetch.git) on github and fork it as shown below
 
-![fork](fork-location.jpg)
+![fork](public/fork-location.jpg)
 
 
 ### 2. Clone your new repository to your system.

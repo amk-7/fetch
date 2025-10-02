@@ -1,3 +1,23 @@
+<body>
+    <div align="center">
+        <h1>
+            Fetch <br/>
+            <img alt="Static Badge" src="https://img.shields.io/badge/build-passing-brightgreen">
+            <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/amk-7/fetch">
+            <img alt="GitHub forks" src="https://img.shields.io/github/forks/amk-7/fetch">
+        </h1> 
+        <img src="public/fork-location.jpg" alt="Preview" width="100%" style="max-width: 1080px; border-radius: 8px;">
+        <p>
+            Simple WhatsApp bot from unofficial WhatsApp API, built in NodeJS &amp; TypeScript, using Gemini &amp; ChatGPT APIs for completion, with many cool features. You can interact with the bot using voice messages, and it will transcribe and respond. 🤖
+        </p>
+        <p>
+            Try it here: <a href="https://wa.me/qr/SBHRATABRAZVA1" target="_blank">WhatsBot Playground</a> or scan the QR code below:
+        </p>
+        <br>
+        <img src="public/qr.jpg" width="35%" alt="WhatsApp QR Code" style="margin-top: 20px;">
+    </div>
+</body>
+
 # Fetch
 
 **Fetch** is a simple Node.js module written in **TypeScript** that allows you to fetch jokes, memes, and more — powered by **AI**.  

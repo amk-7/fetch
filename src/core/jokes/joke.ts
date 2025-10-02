@@ -13,6 +13,15 @@ export default class Joke {
         }
     }
 
+
+    getSetup(): string{
+        return this.setup;
+    }
+
+    getPunchline(): string{
+        return this.punchline;
+    }
+
     getOptions(): JokeOptions | undefined {
         return this.options;
     }
