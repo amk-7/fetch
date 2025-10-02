@@ -17,25 +17,23 @@ npm run build
 
 echo -e "${BLUE}🚀 Hey Dev, c'est l'heure de shipper ton code !${NC}"
 
-# Demander un message de commit
-read -p "✍️  Entre ton message de commit: " COMMIT_MSG
+# Demander si on veut commit
+read -p "❓ Veux-tu faire un commit ? (y/n): " DO_COMMIT
 
-# Git
-echo -e "${GREEN}📦 Ajout des fichiers...${NC}"
-git add ./
+if [[ "$DO_COMMIT" == "y" || "$DO_COMMIT" == "Y" ]]; then
+    # Demander le message de commit
+    read -p "✍️  Entre ton message de commit: " COMMIT_MSG
 
-echo -e "${GREEN}📝 Commit en cours...${NC}"
-git commit -m "$COMMIT_MSG"
+    echo -e "${GREEN}📦 Ajout des fichiers...${NC}"
+    git add .
 
-echo -e "${GREEN}📤 Push vers main...${NC}"
-git push origin main
+    echo -e "${GREEN}📝 Commit en cours...${NC}"
+    git commit -m "$COMMIT_MSG"
 
-# # Publish
-# echo -e "${GREEN}📡 Publication du package...${NC}"
-# ./publish.sh
+    echo -e "${GREEN}📤 Push vers dev...${NC}"
+    git push origin dev
+else
+    echo -e "${RED}⏩ Pas de commit effectué.${NC}"
+fi
 
-# # Docker build
-# echo -e "${GREEN}🐳 Build Docker...${NC}"
-# ./build.sh
-
-# echo -e "${BLUE}✅ Tout est nickel ! Code pushé, testé, buildé et publié.${NC}"
+echo -e "${BLUE}✅ Process terminé.${NC}"
